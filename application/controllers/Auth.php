@@ -17,6 +17,8 @@ class Auth extends MY_Controller
         $this->parseData['javascript'] = $this->js;
         $this->parseData['css'] = $this->css;
 
+        var_dump($this->isLogin());
+
         $this->load->view($this->mainPage, $this->parseData);
     }
 
