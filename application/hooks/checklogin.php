@@ -14,7 +14,7 @@ class CheckLogin
     {
         if($this->CI->router->class != 'Auth' && !$this->CI->session->userIsLogin)
         {
-            redirect(base_url('/login-daktau'));
+            redirect(base_url('/login'));
         }
     }
 }
