@@ -11,7 +11,7 @@ function URL_APP() {
     const BASE_URL = arr[0] + "//" + arr[2];
     
     let splitHost = arr[2].split(":");
-    let otherPath = splitHost[1] === undefined || splitHost[1] === "7793" || splitHost[1] === "80" ? arr[3] : "";
+    let otherPath = splitHost[1] === undefined || splitHost[1] === "7793" || splitHost[1] === "80" ? `/${arr[3]}` : "";
     
     return BASE_URL + otherPath
 }
