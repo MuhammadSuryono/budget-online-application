@@ -42,8 +42,6 @@ class Auth extends MY_Controller
             $this->session->set_userdata($userData);
         }
 
-        echo json_encode(['status' => $this->session->userdata('userIsLogin'), 'data' => $this->session->userdata()]);
-
         echo json_encode(["status" => $statusLogin, "message" => $req->message ,"data" => $req->data]);
     }
 
