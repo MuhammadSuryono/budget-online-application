@@ -17,8 +17,6 @@ class Auth extends MY_Controller
         $this->parseData['javascript'] = $this->js;
         $this->parseData['css'] = $this->css;
 
-        var_dump($this->isLogin());
-
         $this->load->view($this->mainPage, $this->parseData);
     }
 
@@ -44,7 +42,7 @@ class Auth extends MY_Controller
             $this->session->set_userdata($userData);
         }
 
-        echo json_encode(["status" => $statusLogin, "message" => $req->message ,"data" => $req->data]);
+        echo json_encode(["status" => $statusLogin, "message" => $req->message ,"data" => $req]);
     }
 
     public function authLogout()

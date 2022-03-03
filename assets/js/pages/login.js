@@ -18,6 +18,7 @@ $(document).ready(function () {
                 btnLoading(false)
             },
             success: function (result) {
+                console.log(result)
                 let obj = JSON.parse(result);
 
                 if (obj.status) {
@@ -27,7 +28,7 @@ $(document).ready(function () {
                     localStorage.setItem("token", obj.data.token);
 
                     document.getElementById("form-login").reset();
-                    setInterval(function(){ window.location.reload(); }, 1000);
+                    // setInterval(function(){ window.location.reload(); }, 1000);
                 }else{
                     toastr.error(obj.message)
                 }
