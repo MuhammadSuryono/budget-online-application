@@ -42,7 +42,7 @@ class Auth extends MY_Controller
             $this->session->set_userdata($userData);
         }
 
-        echo json_encode(["status" => $statusLogin, "message" => $req->message ,"data" => $req]);
+        echo json_encode(["status" => $statusLogin, "message" => $req->message ,"data" => $req->data, "session" => $this->session->userdata()]);
     }
 
     public function authLogout()
