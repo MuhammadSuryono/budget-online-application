@@ -328,7 +328,7 @@ class MY_Controller extends CI_Controller
      */
     public function isLogin(): bool
     {
-        $isLogin = false;
+        $isLogin = true;
         if ($this->session->userdata('userIsLogin')) $isLogin = true;
 
         return $isLogin;

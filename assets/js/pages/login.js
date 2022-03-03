@@ -28,7 +28,7 @@ $(document).ready(function () {
                     localStorage.setItem("token", obj.data.token);
 
                     document.getElementById("form-login").reset();
-                    // setInterval(function(){ window.location.reload(); }, 1000);
+                    setInterval(function(){ window.location.reload(); }, 1000);
                 }else{
                     toastr.error(obj.message)
                 }
