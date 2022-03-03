@@ -704,7 +704,7 @@ var inputEventName = (isMSIE || isEdge) ? 'DOMCharacterDataModified DOMSubtreeMo
  * Object which check platform and agent
  *
  * @singleton
- * @alternateClassName env
+ * @alternateClassName env.json
  */
 var env = {
     isMac: navigator.appVersion.indexOf('Mac') > -1,

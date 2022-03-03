@@ -1,5 +1,4 @@
-const BASE_URL_API = "http://localhost:7003/";
-const BASE_URL_API_EXCEL = "http://156.67.218.146:8080/api/v1/excel/";
+const BASE_URL_API = "http://mkp-operation.com:7793/budget-online-service/";
 
 /***
  *
@@ -12,7 +11,7 @@ function URL_APP() {
     const BASE_URL = arr[0] + "//" + arr[2];
     
     let splitHost = arr[2].split(":");
-    let otherPath = splitHost[1] === undefined ? "/application" : "";
+    let otherPath = splitHost[1] === undefined || splitHost[1] === "7793" || splitHost[1] === "80" ? arr[3] : "";
     
     return BASE_URL + otherPath
 }
@@ -110,7 +109,6 @@ export {
     alertError,
     LoadingButton,
     DisLoadingButton,
-    BASE_URL_API_EXCEL,
     lastPathUrl,
     getQueryUrl,
     countColumnTable,
