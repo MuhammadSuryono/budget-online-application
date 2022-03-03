@@ -12,10 +12,9 @@ class CheckLogin
 
     public function login_check()
     {
-        var_dump($this->CI->session);
         if($this->CI->router->class != 'Auth' && !$this->CI->session->userIsLogin)
         {
-            redirect(base_url('/login/satu'));
+            redirect(base_url('/login'));
         }
     }
 }
