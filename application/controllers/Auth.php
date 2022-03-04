@@ -7,6 +7,7 @@ class Auth extends MY_Controller
     public function __construct()
     {
         parent::__construct();
+        echo $this->input->method();
         $this->print_pretty($this->session->userdata());
         if ($this->isLogin()) redirect("/dashboard");
         $this->js[] = base_url() . 'assets/js/pages/login.js';
