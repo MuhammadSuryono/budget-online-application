@@ -2,7 +2,7 @@
     $user = $this->session->userData;
     $nav = [
         'Dashboard' => [
-            'url' => 'admin/dashboard',
+            'url' => '/dashboard',
             'icon' => 'fa-tachometer',
             'in' => ['dashboard']
         ],

@@ -308,7 +308,7 @@ class MY_Controller extends CI_Controller
             case 'local':
                 return 'http://localhost:7003/';
             case 'production':
-                return 'http://mkp-operation.com:7793/budget-online-serv/';
+                return 'http://mkp-operation.com:7793/budget-serv/';
             default:
                 return '';
         }

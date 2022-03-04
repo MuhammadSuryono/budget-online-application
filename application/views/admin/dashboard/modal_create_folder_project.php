@@ -13,6 +13,11 @@
                         <label for="name">Jenis Folder Project</label>
                         <select class="form-control" name="type" id="type">
                             <option value="">-- Pilih Jenis Folder --</option>
+                            <?php
+                            foreach ($optionsType as $key => $value) {
+                                echo '<option value="' . $value->value . '">' . $value->label . '</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>

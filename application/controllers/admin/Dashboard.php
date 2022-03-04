@@ -14,14 +14,17 @@ class Dashboard extends MY_Controller
 
     public function index()
     {
-        $this->js[] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js";
         $this->js[] = base_url('assets/js/pages/dashboard.js');
+        $this->js[] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js";
         $this->css[] = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css";
+
+        $dataOptionType = $this->http_request_get('budget/project-type');
 
         $this->parseData['content'] = 'admin/dashboard/index';
         $this->parseData['javascript'] = $this->js;
         $this->parseData['css'] = $this->css;
         $this->parseData['title_budge'] = 'Dashboard';
+        $this->parseData['optionsType'] = $dataOptionType->data;
         
         $this->load->view($this->mainPage, $this->parseData);
     }
