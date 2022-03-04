@@ -40,7 +40,6 @@ function httpRequest(url, method, body, handle, errorHandler) {
 }
 
 function httpRequestUrlApp(url, method, body, handle, errorHandler) {
-  console.log(URL_APP() + url)
   $.ajax({
     url: URL_APP() + url,
     type: method,

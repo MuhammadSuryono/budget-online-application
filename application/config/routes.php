@@ -63,6 +63,7 @@ $route['folder/(:any)'] = 'admin/folder/list_folder/$1';
 $route['folder/(:any)/project/(:any)'] = 'admin/project/detail/$2';
 $route['folder/(:any)/project/(:any)/item/(:any)'] = 'admin/project/item_budget/$3';
 $route['project/pengajuan/(:any)/items'] = 'admin/project/list_item_budget/$1';
+$route['project/item/(:any)/bpu'] = 'admin/project/list_item_bpu/$1';
 
 
 $route['api/folder/(:any)'] = 'admin/folder/get_data_list/$1';

@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="m-b-md">
-                            <h2>Rincian Item Budget Nama Item</h2>
+                            <h2>Rincian Item Budget</h2>
                         </div>
 
                     </div>
@@ -14,23 +14,23 @@
                     <div class="col-lg-6">
                         <dl class="row mb-0">
                             <div class="col-sm-4 text-sm-right"><dt>Nomor Item:</dt> </div>
-                            <div class="col-sm-8 text-sm-left"><dd class="mb-1">1</dd> </div>
+                            <div class="col-sm-8 text-sm-left"><dd class="mb-1"><?= $dataItem->no ?></dd> </div>
                         </dl>
                         <dl class="row mb-0">
                             <div class="col-sm-4 text-sm-right"><dt>Rincian:</dt> </div>
-                            <div class="col-sm-8 text-sm-left"> <dd class="mb-1">  STKB Transaksi Luar Kota</dd></div>
+                            <div class="col-sm-8 text-sm-left"> <dd class="mb-1">  <?= $dataItem->rincian ?></dd></div>
                         </dl>
                         <dl class="row mb-0">
                             <div class="col-sm-4 text-sm-right"><dt>Kota:</dt> </div>
-                            <div class="col-sm-8 text-sm-left"> <dd class="mb-1"> Jabodetabek dan Luar Kota </dd></div>
+                            <div class="col-sm-8 text-sm-left"> <dd class="mb-1"> <?= $dataItem->kota ?> </dd></div>
                         </dl>
                         <dl class="row mb-0">
                             <div class="col-sm-4 text-sm-right"> <dt>Jenis:</dt></div>
-                            <div class="col-sm-8 text-sm-left"> <dd class="mb-1"> 	STKB OPS </dd></div>
+                            <div class="col-sm-8 text-sm-left"> <dd class="mb-1"> 	<?= $dataItem->status ?> </dd></div>
                         </dl>
                         <dl class="row mb-0">
                             <div class="col-sm-4 text-sm-right"> <dt>Penerima Pembayaran:</dt></div>
-                            <div class="col-sm-8 text-sm-left"> <dd class="mb-1"> 	TLF </dd></div>
+                            <div class="col-sm-8 text-sm-left"> <dd class="mb-1"> 	<?= $dataItem->penerima ?> </dd></div>
                         </dl>
 
                     </div>
@@ -41,7 +41,7 @@
                                 <dt>Biaya Satuan:</dt>
                             </div>
                             <div class="col-sm-8 text-sm-left">
-                                <dd class="mb-1">Rp. 0 x 0</dd>
+                                <dd class="mb-1">Rp. <?= number_format($dataItem->harga) ?> x <?= $dataItem->quantity ?></dd>
                             </div>
                         </dl>
                         <dl class="row mb-0">
@@ -49,7 +49,7 @@
                                 <dt>Total Biaya:</dt>
                             </div>
                             <div class="col-sm-8 text-sm-left">
-                                <dd class="mb-1">Rp. 0</dd>
+                                <dd class="mb-1">Rp. <?= number_format($dataItem->total) ?></dd>
                             </div>
                         </dl>
                         <dl class="row mb-0">
@@ -57,7 +57,7 @@
                                 <dt>Total Pembayaran:</dt>
                             </div>
                             <div class="col-sm-8 text-sm-left">
-                                <dd class="mb-1">Rp. 0</dd>
+                                <dd class="mb-1">Rp. <?= number_format($dataItem->total_pembayaran) ?></dd>
                             </div>
                         </dl>
                         <dl class="row mb-0">
@@ -65,7 +65,7 @@
                                 <dt>Sisa Pembayaran:</dt>
                             </div>
                             <div class="col-sm-8 text-sm-left">
-                                <dd class="mb-1">Rp. 0</dd>
+                                <dd class="mb-1">Rp. <?= number_format($dataItem->sisa_pembayaran) ?></dd>
                             </div>
                         </dl>
                     </div>
@@ -79,9 +79,9 @@
                             <div class="col-sm-10 text-sm-left">
                                 <dd>
                                     <div class="progress m-b-1">
-                                        <div style="width: 60%;" class="progress-bar progress-bar-striped progress-bar-animated"></div>
+                                        <div style="width: <?= $dataItem->persentase_pembayaran ?>%;" class="progress-bar progress-bar-striped progress-bar-animated"></div>
                                     </div>
-                                    <small>Budget telah dibayarkan <strong>60%</strong> dari total <strong>Rp. 900.000.000</strong></small>
+                                    <small>Budget telah dibayarkan <strong><?= $dataItem->persentase_pembayaran ?>%</strong> dari total <strong>Rp. <?= number_format($dataItem->total) ?></strong></small>
                                 </dd>
                             </div>
                         </dl>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="table table-striped" id="table-list-bpu">
                                 <thead>
                                 <tr>
                                     <th>No</th>
@@ -108,10 +108,7 @@
                                     <th>Aksi</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <td colspan="10" class="text-center"><i class="fa fa-times"></i> Tidak ada data</td>
-                                </tr>
+                                <tbody id="body-list-bpu">
                                 </tbody>
                             </table>
                         </div>

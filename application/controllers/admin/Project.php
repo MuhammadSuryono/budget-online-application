@@ -24,12 +24,15 @@ class Project extends MY_Controller
         $this->load->view($this->mainPage, $this->parseData);
     }
 
-    public function item_budget($idSubmission)
+    public function item_budget($idItem)
     {
+        $this->js[] = base_url('assets/js/pages/project-item-budget.js');
+        $reqDataItem = $this->http_request_get(sprintf('budget/item/%s', $idItem));
         $this->parseData['content'] = 'admin/project/item-budget';
         $this->parseData['javascript'] = $this->js;
         $this->parseData['css'] = $this->css;
-        $this->parseData['title_budge'] = 'Nama Item ';
+        $this->parseData['title_budge'] = $reqDataItem->data->rincian;
+        $this->parseData['dataItem'] = $reqDataItem->data;
 
         $this->load->view($this->mainPage, $this->parseData);
     }
@@ -37,6 +40,12 @@ class Project extends MY_Controller
     public function list_item_budget($idSubmission)
     {
         $reqDataItems = $this->http_request_get(sprintf('budget/pengajuan/%s/items', $idSubmission));
+        echo json_encode($reqDataItems);
+    }
+
+    public function list_item_bpu($idItem)
+    {
+        $reqDataItems = $this->http_request_get(sprintf('budget/item/%s/bpu', $idItem));
         echo json_encode($reqDataItems);
     }
 }
